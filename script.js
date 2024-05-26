@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const contactForm = document.getElementById('contact-form');
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+    const header = document.querySelector('header');
 
     // Ustaw domyślny motyw na ciemny
     body.classList.add('dark-theme');
@@ -85,4 +86,18 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('.fa-sun').style.display = 'inline';
         }
     }
+
+    // Show/hide header on scroll
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            // Scroll down
+            header.classList.add('hidden');
+        } else {
+            // Scroll up
+            header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+    });
 });

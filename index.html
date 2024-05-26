@@ -10,24 +10,26 @@
 </head>
 <body class="dark-theme">
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projekty</a></li>
-                <li><a href="#about">O mnie</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
         <h1 class="header-title">Moje Portfolio</h1>
-        <button id="theme-toggle" class="btn theme-toggle">
-            <i class="fas fa-sun"></i>
-            <i class="fas fa-moon"></i>
-        </button>
         <div class="header-socials">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="top-bar">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projekty</a></li>
+                    <li><a href="#about">O mnie</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="btn theme-toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
     </header>
 
@@ -68,7 +70,7 @@
 
     <section id="contact" class="fade-in">
         <h2>Kontakt</h2>
-        <form id="contact-form" action="https://formspree.io/f/xyyralqy" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="form-group">
                 <label for="name">Imię:</label>
                 <input type="text" id="name" name="name" required>
