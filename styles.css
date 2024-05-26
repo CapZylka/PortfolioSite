@@ -8,10 +8,13 @@
 body {
     color: #333;
     line-height: 1.6;
+    background: url('https://www.transparenttextures.com/patterns/circuit-board.png'), linear-gradient(to right, #000428, #004e92);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 header {
-    background: #333;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 10px 0;
     position: sticky;
@@ -44,8 +47,8 @@ header h1 {
 .hero {
     text-align: center;
     padding: 50px 20px;
-    background: url('hero-bg.jpg') no-repeat center center/cover;
-    color: black;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
 .hero h2 {
@@ -59,7 +62,7 @@ header h1 {
 }
 
 .hero .btn {
-    background: #333;
+    background: #004e92;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -67,11 +70,14 @@ header h1 {
 }
 
 .hero .btn:hover {
-    background: #555;
+    background: #000428;
 }
 
 section {
     padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 20px 0;
+    border-radius: 10px;
 }
 
 #projects .project-grid {
@@ -115,7 +121,7 @@ section {
 }
 
 #projects .project-info .btn {
-    background: #333;
+    background: #004e92;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -123,7 +129,7 @@ section {
 }
 
 #projects .project-info .btn:hover {
-    background: #555;
+    background: #000428;
 }
 
 #contact .form-group {
@@ -148,7 +154,7 @@ section {
 }
 
 footer {
-    background: #333;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
     padding: 20px 0;
