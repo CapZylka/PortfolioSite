@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     const contactForm = document.getElementById('contact-form');
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Ustaw domyślny motyw na ciemny
+    body.classList.add('dark-theme');
+
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -37,18 +43,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const faders = document.querySelectorAll('.fade-in');
 
     const appearOptions = {
-        threshold: 0.5,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.25,
+        rootMargin: "0px 0px -100px 0px"
     };
 
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
-                entry.target.classList.remove('hide');
             } else {
                 entry.target.classList.remove('show');
-                entry.target.classList.add('hide');
             }
         });
     }, appearOptions);
@@ -56,4 +60,29 @@ document.addEventListener("DOMContentLoaded", function() {
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
     });
+
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', function() {
+        if (body.classList.contains('light-theme')) {
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+        } else {
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+        }
+        updateIcons();
+    });
+
+    // Update icons on load
+    updateIcons();
+
+    function updateIcons() {
+        if (body.classList.contains('dark-theme')) {
+            document.querySelector('.fa-moon').style.display = 'inline';
+            document.querySelector('.fa-sun').style.display = 'none';
+        } else {
+            document.querySelector('.fa-moon').style.display = 'none';
+            document.querySelector('.fa-sun').style.display = 'inline';
+        }
+    }
 });
