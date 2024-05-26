@@ -36,12 +36,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header h1 {
     text-align: center;
     font-size: 2.5rem;
     animation: fadeInDown 1s ease-out;
+    flex: 1 100%;
 }
 
 @keyframes fadeInDown {
@@ -60,6 +62,7 @@ header nav ul {
     display: flex;
     justify-content: center;
     padding: 0;
+    flex: 1 100%;
 }
 
 header nav ul li {
@@ -75,6 +78,13 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #ddd;
+}
+
+header .header-socials {
+    display: flex;
+    justify-content: center;
+    flex: 1 100%;
+    margin-top: 10px;
 }
 
 header .header-socials a {
@@ -326,4 +336,31 @@ body.dark-theme .theme-toggle .fa-moon {
 .fade-in.show {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    #projects .project {
+        flex: 1 1 100%;
+    }
 }
