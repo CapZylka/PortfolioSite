@@ -6,12 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Ustaw domyślny motyw na ciemny
     body.classList.add('dark-theme');
-
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
-
         const formData = new FormData(contactForm);
-
         fetch(contactForm.action, {
             method: 'POST',
             body: formData,
@@ -29,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
             alert('Ups! Coś poszło nie tak, spróbuj ponownie.');
         });
     });
-
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -39,15 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     });
-
     // Intersection Observer API dla efektu pojawiania się/znikania
     const faders = document.querySelectorAll('.fade-in');
-
     const appearOptions = {
         threshold: 0.25,
         rootMargin: "0px 0px -100px 0px"
     };
-
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -57,11 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }, appearOptions);
-
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
     });
-
     // Theme toggle functionality
     themeToggle.addEventListener('click', function() {
         if (body.classList.contains('light-theme')) {
@@ -73,10 +64,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         updateIcons();
     });
-
     // Update icons on load
     updateIcons();
-
     function updateIcons() {
         if (body.classList.contains('dark-theme')) {
             document.querySelector('.fa-moon').style.display = 'inline';
