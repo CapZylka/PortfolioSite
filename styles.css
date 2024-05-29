@@ -67,7 +67,7 @@ header nav ul {
 }
 
 header nav ul li {
-    margin: 0 20px;
+    margin: 0 10px;
 }
 header nav ul li a {
     color: white;
@@ -295,6 +295,11 @@ body.dark-theme .theme-toggle .fa-moon {
     opacity: 1;
     transform: translateX(0);
 }
+header nav ul li a.active {
+    color: #f5b041;
+    font-weight: bold;
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
