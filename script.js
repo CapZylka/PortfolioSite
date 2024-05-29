@@ -80,11 +80,11 @@ document.addEventListener("DOMContentLoaded", function() {
     let lastScrollTop = 0;
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
+        if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
             // Scroll down
             header.classList.add('hidden');
-        } else {
-            // Scroll up
+        } else if (scrollTop === 0) {
+            // Reached the top
             header.classList.remove('hidden');
         }
         lastScrollTop = scrollTop;
